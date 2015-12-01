@@ -12,7 +12,9 @@ echo
 
 "$ECUKES_EMACS" --batch --eval "(unless (ignore-errors (require 'cl-lib)) (package-refresh-contents) (package-install 'cl-lib))"
 
+echo "start cask!!!!"
 cask exec ecukes
+echo "end cask!!!!"
 
 if [ -n "$TRAVIS_COMMIT_RANGE" ]; then
     echo "Building recipes touched in commits $TRAVIS_COMMIT_RANGE"
