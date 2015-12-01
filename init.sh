@@ -6,3 +6,5 @@ fi
 if [ ! -d "working" ]; then
     mkdir working
 fi
+
+cask install ecukes
