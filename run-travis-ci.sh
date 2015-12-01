@@ -30,7 +30,8 @@ fi
 
 ## "$ECUKES_EMACS" --batch --eval "(progn (load-file \"package-build.el\")(package-build-archive 'erlang))"
 
-test_recipes = "erlang vagrant"
+test_recipes="erlang vagrant"
+echo "test_recipes = ${test_recipes}"
 for recItem in $test_recipes; do
     if [ -f "./recipes/$recipe_name" ]; then
         "$ECUKES_EMACS" --batch --eval "(progn (load-file \"package-build.el\")(package-build-archive '$recItem))"
