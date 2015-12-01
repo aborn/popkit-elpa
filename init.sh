@@ -8,3 +8,6 @@ if [ ! -d "working" ]; then
 fi
 
 cask install ecukes
+
+sudo apt-get install mercurial  #linux
+brew install hg   # mac
