@@ -2,3 +2,4 @@
 /working/*
 /.idea/
 /.cask/
+.ecukes-failing-scenarios
