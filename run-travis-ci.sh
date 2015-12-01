@@ -28,4 +28,12 @@ if [ -n "$TRAVIS_COMMIT_RANGE" ]; then
     done
 fi
 
+## "$ECUKES_EMACS" --batch --eval "(progn (load-file \"package-build.el\")(package-build-archive 'erlang))"
+
+test_recipes = "erlang vagrant"
+for recItem in $test_recipes; do
+    if [ -f "./recipes/$recipe_name" ]; then
+        "$ECUKES_EMACS" --batch --eval "(progn (load-file \"package-build.el\")(package-build-archive '$recItem))"
+    fi
+
 echo "Build successful"
