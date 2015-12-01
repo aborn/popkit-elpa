@@ -1,9 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>melpa</title>
-	</head>
-	<body>
-	<h5>popkit elpa http://elpa.popkit.org/packages</h5>
-	</body>
-	</html>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel='shortcut icon' type='image/x-icon' href='style/image/favicon.ico' />
+
+    <title>melpa国内镜像</title>
+
+    <link rel="stylesheet" type="text/css" href="http://oss.maxcdn.com/semantic-ui/2.1.6/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="http://oss.maxcdn.com/highlight.js/8.9.1/styles/googlecode.min.css">
+</head>
+
+<body>
+
+<div class="ui text container">
+    <h1 class="ui dividing header">popkit-elpa</h1>
+
+    <h3 class="first">popkit-elpa</h3>
+    <p>地址：http://elpa.popkit.org/packages</p>
+
+    <a class="ui orange label">
+        开发进行中...
+        <div class="detail" id="dateInfo">2015-12-01</div>
+    </a>
+
+    <div class="ui segment">
+        <div class="code">
+            (add-to-list 'package-archives
+            '("popkit" . "http://elpa.popkit.org/packages/"))
+        </div>
+    </div>
+</div>
+
+<script src="http://oss.maxcdn.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://oss.maxcdn.com/semantic-ui/2.1.6/semantic.min.js"></script>
+<script src="http://oss.maxcdn.com/highlight.js/8.9.1/highlight.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.code').each(function(i, block) {
+            hljs.configure({useBR: true});
+            hljs.highlightBlock(block);
+        });
+        var now =new Date()
+        var dataTxt = "" + now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + now.getDate();
+        $('#dateInfo').html("2015-12-01~" + dataTxt);
+    })
+</script>
+</body>
+</html>
