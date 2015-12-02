@@ -2,6 +2,7 @@
 
 exec 2>&1
 cd "$(dirname "$0")"
+echo `date +%Y-%m-%d-%H:%M.%S`
 
 ECUKES_EMACS=${EMACS:-$(which emacs)}
 
@@ -30,6 +31,7 @@ fi
 
 ## "$ECUKES_EMACS" --batch --eval "(progn (load-file \"package-build.el\")(package-build-archive 'erlang))"
 
+ALL_PKG_LIST=`ls -x recipes`
 test_recipes="vagrant 2048-game ztree helm-ack"
 echo "test_recipes = ${test_recipes}"
 for recItem in $test_recipes; do
@@ -38,4 +40,5 @@ for recItem in $test_recipes; do
     fi
 done
 
+echo `date +%Y-%m-%d-%H:%M.%S`
 echo "Build successful"
