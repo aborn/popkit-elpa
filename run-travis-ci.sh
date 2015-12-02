@@ -35,6 +35,7 @@ ALL_PKG_LIST=`ls -x recipes`
 test_recipes="vagrant 2048-game ztree helm-ack"
 echo "test_recipes = ${test_recipes}"
 for recItem in $ALL_PKG_LIST; do
+    echo `date +%Y-%m-%d-%H:%M.%S`
     if [ -f "./recipes/$recItem" ]; then
         "$ECUKES_EMACS" --batch --eval "(progn (load-file \"package-build.el\")(package-build-archive '$recItem))"
     fi
