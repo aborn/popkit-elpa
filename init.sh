@@ -11,5 +11,7 @@ fi
 brew install cask
 cask install ecukes
 
+sudo apt-get install runit
+
 #sudo apt-get install mercurial  #linux
 brew install hg   # mac
