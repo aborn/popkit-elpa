@@ -546,7 +546,7 @@
       m("section.page-header", [
         m("h1", [
           melpa.archivename.view(ctrl.archivename),
-          m("small", " (Milkypostman’s Emacs Lisp Package Archive)")
+          m("small", " (Popkit’s Emacs Lisp Package Archive)")
         ])
       ]),
       m(".row", [
