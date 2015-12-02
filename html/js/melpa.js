@@ -493,7 +493,7 @@
   melpa.archivename = {};
   melpa.archivename.controller = function() {
     this.archiveName = function() {
-      return melpa.stable() ? "MELPA Stable" : "MELPA";
+      return melpa.stable() ? "POPKIT ELPA Stable" : "POPKIT ELPA";
     };
   };
   melpa.archivename.view = function(ctrl) {
