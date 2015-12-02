@@ -3,3 +3,5 @@
 /.idea/
 /.cask/
 .ecukes-failing-scenarios
+/log/*
+run.pid
