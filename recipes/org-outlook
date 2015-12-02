@@ -1,0 +1,3 @@
+(org-outlook
+ :repo "mattfidler/org-outlook.el"
+ :fetcher github)

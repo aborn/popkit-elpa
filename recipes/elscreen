@@ -1,0 +1,3 @@
+(elscreen
+ :repo "knu/elscreen"
+ :fetcher github)

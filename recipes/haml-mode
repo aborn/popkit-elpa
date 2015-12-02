@@ -1,0 +1,2 @@
+(haml-mode :repo "nex3/haml-mode" :fetcher github)
+

@@ -1,0 +1,3 @@
+(elixir-mode
+ :fetcher github
+ :repo "elixir-lang/emacs-elixir")

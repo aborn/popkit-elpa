@@ -1,0 +1,2 @@
+(clojure-mode :repo "clojure-emacs/clojure-mode" :fetcher github :files
+              ("clojure-mode.el"))

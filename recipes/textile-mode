@@ -1,0 +1,2 @@
+(textile-mode :repo "emacsmirror/textile-mode" :fetcher github)
+

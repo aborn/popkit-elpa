@@ -1,0 +1,2 @@
+(js2-mode :repo "mooz/js2-mode" :fetcher github)
+

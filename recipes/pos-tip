@@ -1,0 +1,3 @@
+(pos-tip
+ :repo "pitkali/pos-tip"
+ :fetcher github)

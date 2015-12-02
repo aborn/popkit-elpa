@@ -1,0 +1,2 @@
+(color-theme-sanityinc-tomorrow :repo "purcell/color-theme-sanityinc-tomorrow" :fetcher github)
+

@@ -1,0 +1,2 @@
+(sass-mode :repo "nex3/sass-mode" :fetcher github)
+

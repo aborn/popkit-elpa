@@ -1,0 +1,4 @@
+(scratch-log :repo "mori-dev/scratch-log"
+      :fetcher github
+      :files ("scratch-log.el"))
+

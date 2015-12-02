@@ -1,0 +1,9 @@
+(ergoemacs-mode
+ :fetcher github :repo "ergoemacs/ergoemacs-mode"
+ :files ("*.el"
+         "*.svg"
+         "*.ahk"
+         "*.info"
+         "dir"
+         "bash-us.txt"
+         "os_x_qwerty.dict.txt"))

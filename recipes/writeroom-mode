@@ -1,0 +1,3 @@
+(writeroom-mode
+ :fetcher github
+ :repo "joostkremers/writeroom-mode")

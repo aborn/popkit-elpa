@@ -1,0 +1,2 @@
+(zlc :repo "mooz/emacs-zlc" :fetcher github)
+

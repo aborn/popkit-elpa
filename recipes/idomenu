@@ -1,0 +1,1 @@
+(idomenu :repo "birkenfeld/idomenu" :fetcher github)

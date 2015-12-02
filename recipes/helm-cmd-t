@@ -1,0 +1,2 @@
+(helm-cmd-t :repo "lewang/helm-cmd-t"
+            :fetcher github)

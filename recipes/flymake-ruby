@@ -1,0 +1,1 @@
+(flymake-ruby :repo "purcell/flymake-ruby" :fetcher github)

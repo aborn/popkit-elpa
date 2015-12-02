@@ -1,0 +1,4 @@
+(yasnippet :repo "capitaomorte/yasnippet"
+           :fetcher github
+           :files ("yasnippet.el" "snippets"))
+

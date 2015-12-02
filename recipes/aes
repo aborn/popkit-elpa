@@ -1,0 +1,1 @@
+(aes :repo "Sauermann/emacs-aes" :fetcher github)
