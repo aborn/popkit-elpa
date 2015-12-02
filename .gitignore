@@ -5,3 +5,5 @@
 .ecukes-failing-scenarios
 /log/*
 run.pid
+status.pid
+nohup.out
