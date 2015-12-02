@@ -30,7 +30,7 @@ fi
 
 ## "$ECUKES_EMACS" --batch --eval "(progn (load-file \"package-build.el\")(package-build-archive 'erlang))"
 
-test_recipes="vagrant 2048-game ztree"
+test_recipes="vagrant 2048-game ztree helm-ack"
 echo "test_recipes = ${test_recipes}"
 for recItem in $test_recipes; do
     if [ -f "./recipes/$recItem" ]; then
