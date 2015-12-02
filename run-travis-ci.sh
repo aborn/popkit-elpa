@@ -41,4 +41,5 @@ for recItem in $test_recipes; do
 done
 
 echo `date +%Y-%m-%d-%H:%M.%S`
+make packages/archive-contents
 echo "Build successful"
