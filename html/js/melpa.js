@@ -564,8 +564,9 @@
         ]),
         m(".col-md-4", [
           melpa.buildstatus.view(ctrl.buildstatus),
-          m.trust('<a class="twitter-timeline" data-dnt="true" data-related="milkypostman,sanityinc" href="https://twitter.com/melpa_emacs" data-widget-id="311867756586864640">Tweets by @melpa_emacs</a>'),
-          m('script', {src: "//platform.twitter.com/widgets.js", type: "text/javascript"})
+            // 国内用户去掉twitter
+          //m.trust('<a class="twitter-timeline" data-dnt="true" data-related="milkypostman,sanityinc" href="https://twitter.com/melpa_emacs" data-widget-id="311867756586864640">Tweets by @melpa_emacs</a>'),
+          //m('script', {src: "//platform.twitter.com/widgets.js", type: "text/javascript"})
         ])
       ]),
       melpa.packagelist.view(ctrl.packagelist)
