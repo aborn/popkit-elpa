@@ -470,9 +470,9 @@
     }
     if (ctrl.running()) {
       return m(".alert.alert-warning", [
-        m("strong", "Current build started: "),
+        m("strong", "当前构建开始于:"),
         m("span", [reltime(ctrl.started())]),
-        m("span", [", last took ", duration()])
+        m("span", [", 上次耗时 ", duration()])
       ]);
     } else {
       return m(".alert.alert-success", [
