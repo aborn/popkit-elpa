@@ -1,5 +1,6 @@
 # popkit-elpa
-http://elpa.popkit.org/
+popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的需求:
+项目首页为 http://elpa.popkit.org/
 
 ## INTRO
 这个项目主要从[melpa](https://github.com/aborn/melpa)项目fork而来
