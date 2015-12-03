@@ -31,14 +31,14 @@ mkdir -p ~/var/lib/logrotate
 mkdir -p ~/etc
 
 # ruby is used for templating
-#\curl -L https://get.rvm.io | bash -s stable
+\curl -L https://get.rvm.io | bash -s stable
 PATH=$PATH:$HOME/.rvm/bin
-#source "$HOME/.rvm/scripts/rvm"
-#rvm requirements
-#rvm install ruby-1.9.3
-#rvm use ruby-1.9.3 --default
-#echo "source ~/.profile" >> .bash_profile
+source "$HOME/.rvm/scripts/rvm"
+rvm requirements
+rvm install ruby-1.9.3
+rvm use ruby-1.9.3 --default
+echo "source ~/.profile" >> .bash_profile
 
-#git clone http://github.com/milkypostman/melpa
+git clone http://github.com/milkypostman/melpa
 
 #sudo reboot
