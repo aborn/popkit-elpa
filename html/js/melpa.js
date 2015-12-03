@@ -286,13 +286,13 @@
       return glyphicon((field != ctrl.sortBy()) ? "minus" : (ctrl.sortAscending() ? "chevron-down" : "chevron-up"));
     };
     return m("section#packages", [
-      m("h2", [
-        "Current List of ",
+      m("h2[style='margin-top: 25px']", [
+        "当前库中含有",
         ctrl.packageList().totalPackages().toLocaleString(),
-        " Packages ",
+        " 个包 ",
         m("small", [
           ctrl.packageList().totalDownloads().toLocaleString(),
-          " downloads to date"
+          " 个下载量"
         ])
       ]),
       m("p", [
@@ -551,7 +551,8 @@
       ]),
       m(".row", [
         m(".col-md-8", [
-          m("section.jumbotron", [
+          m("section.jumbotron.ui.segment", [
+            "popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的需求:",
             m("ul", [
               "<strong>Up-to-date packages built on our servers from upstream source</strong>",
               "<strong>Installable in any Emacs with 'package.el'</strong> - no local version-control tools needed",
