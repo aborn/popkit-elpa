@@ -7,3 +7,5 @@
 run.pid
 status.pid
 nohup.out
+index2.html
+html/*.json
