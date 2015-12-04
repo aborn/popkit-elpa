@@ -1,4 +1,4 @@
-/home/melpa/log/melpa*.log {
+/home/popkit/log/melpa*.log {
 	daily
 	create 0640 melpa melpa
 	compress
