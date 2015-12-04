@@ -552,7 +552,7 @@
       m(".row", [
         m(".col-md-8", [
           m("section.jumbotron.ui.segment", [
-            "popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的需求:",
+            "popkit elpa是elpa的国内镜像，满足国内emacs用户快速安装包的需求:",
             m("ul", [
               "<strong>Up-to-date packages built on our servers from upstream source</strong>",
               "<strong>Installable in any Emacs with 'package.el'</strong> - no local version-control tools needed",

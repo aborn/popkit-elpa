@@ -3,138 +3,66 @@
 
     <section>
         <a name="installing"></a>
-        <h3 class="first">安装</h3>
+        <h2 class="first">安装</h2>
 
-        <p>To use the MELPA repository, you'll need an Emacs with
-            <code>package.el</code>. Emacs 24 has <code>package.el</code>
-            bundled with it, and there's also
-            a <a href="http://repo.or.cz/w/emacs.git/blob_plain/ba08b24186711eaeb3748f3d1f23e2c2d9ed0d09:/lisp/emacs-lisp/package.el">version
-                you can use with Emacs 23</a>.
+        <p>使用popkit的emacs软件源, 必须添加
+            <code>package.el</code>. Emacs 24 及以上版本自带<code>package.el</code>
+            无需添加, <a href="/package.el" target="_blank">
+                Emacs 23以下版本，点击下载package.el
+            </a>.
         </p>
 
         <p>
-            Enable installation of packages from MELPA by adding an entry
-            to <code>package-archives</code> after <code>(require
-            'package)</code> and before the call
-            to <code>package-initialize</code> in
-            your <code>init.el</code> or <code>.emacs</code> file:
+            配置emacs的安装源从popkit下载，添加http://elpa.popkit.org/packages/到
+            <code>package-archives</code>，位置位于<code>(require
+            'package)</code>之后，且
+            <code>package-initialize</code>之前，将如下代码添加到你的
+            <code>init.el</code> 或 <code>.emacs</code> 文件即可:
         </p>
 
-      <pre><code>(require 'package) ;; You might already have this line
+        <pre><code>
+          (require 'package) ;; You might already have this line
           (add-to-list 'package-archives
-          '("popkit" . "https://elpa.popkit.org/packages/"))
+          '("popkit" . "http://elpa.popkit.org/packages/"))
           (when (< emacs-major-version 24)
           ;; For important compatibility libraries like cl-lib
           (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-          (package-initialize) ;; You might already have this line</code></pre>
-
-        <h3>定制化</h3>
-        <p>
-            What if you only want some of your packages to be installed
-            from MELPA, and the rest from Marmalade or elsewhere?
-        </p>
-        <p>
-            Only in the very latest Emacs snapshots is there a way to
-            exclude or include versions according to their source
-            (see <code>package-pinned-packages</code>). For all other
-            users, we provide a <code>package-filter.el</code> package (available
-            in MELPA) that will allow you to enable only certain packages
-            or exclude certain packages.
-            You can install the package
-            manually by pasting this into your <code>*scratch*</code>
-            buffer and evaluating it.
-        </p>
-      <pre><code>(progn
-          (switch-to-buffer
-          (url-retrieve-synchronously
-          "https://raw.github.com/milkypostman/package-filter/master/package-filter.el"))
-          (package-install-from-buffer  (package-buffer-info) 'single))</code></pre>
-
-        <p>You can then customize two variables:</p>
-        <dl>
-            <dt><code>package-archive-enable-alist</code></dt>
-            <dd>
-                <p>
-                    Optional Alist of enabled packages used
-                    by <code>package-filter</code>. The format
-                    is <code>(ARCHIVE . PACKAGE ...)</code>,
-                    where <code>ARCHIVE</code> is a string matching an archive
-                    name in<code>package-archives</code>, <code>PACKAGE</code>
-                    is a symbol of a package in <code>ARCHIVE</code> to
-                    enable.
-                </p>
-                <p>
-                    If no <code>ARCHIVE</code> exists in the alist, all
-                    packages are enabled.
-                </p>
-            </dd>
-            <dt><code>package-archive-exclude-alist</code></dt>
-            <dd>
-                <p>
-                    Alist of packages excluded by <code> package-filter
-                </code>. The format is <code>(ARCHIVE . PACKAGE
-                    ...)</code>, where <code>ARCHIVE</code> is a string
-                    matching an archive name
-                    in</code>package-archives</code>, <code>PACKAGE</code> is
-                    a symbol of a package in that archive to exclude.</p>
-                <p>
-                    Any specified package is excluded regardless of the value
-                    of <code>package-archive-enable-alist</code>
-                </p>
-            </dd>
-        </dl>
+          (package-initialize) ;; You might already have this line
+        </code></pre>
     </section>
-    <section>
-        <a name="known-issues"></a>
-        <h2>Known Issues</h2>
-        <p>
-            <strong>Note:</strong> <em>These fixes are included in
-            the <code>package-filter.el</code> package.</em>
-        </p>
-        <p>
-            There is a small bug in Emacs24’s <code>package.el</code> such
-            that the dependency order comes out backwards. The problem is
-            patched by some <em>advice</em>.
-        </p>
-
-      <pre><code> (defadvice package-compute-transaction
-          (before package-compute-transaction-reverse (package-list requirements) activate compile)
-          "reverse the requirements"
-          (setq requirements (reverse requirements))
-          (print requirements))</code></pre>
-    </section>
+    
     <section>
         <a name="updating"></a>
-        <h2>Updating Packages</h2>
+        <h2>更新</h2>
         <p>
-            <code>package.el</code> now includes a mechanism to upgrade
-            packages. After running <code>package-list-packages</code>,
-            type <em>U</em> (mark Upgradable packages) and then <em>x</em>
-            (eXecute the installs and deletions). When it’s done
-            installing all the packages it will ask if you want to delete
-            the obsolete packages and so you can hit <em>y</em> (Yes).
+            <code>package.el</code> 的更新机制很简单. 运行命令(M-x)<code>package-list-packages</code>,
+            执行 <em>U</em> (标记要更新的包)，然后执行 <em>x</em>
+            (执行安装更新命令). 当更新完成后，问你是否要删除老的包，输入 <em>y</em> (删除老包)。
         </p>
         <p>
-            If you run into a problem installing or upgrading, you may
-            need to go into your <code>~/.emacs.d/elpa/</code> directory
-            and delete packages that are installed multiple times. This
-            can happen when the install times out.
+            如果中间遇到问题，只能到<code>~/.emacs.d/elpa/</code> 路径
+            下做删除操作。
         </p>
         <a name="adding"></a>
         <h2>添加包</h2>
         <p>
-            In so many words, fork the project's source tree
-            and create a pull request with a recipe for your package.
-            The <tt>README.md</tt> file on GitHub has more details.
-            See the next section for a link.
+            想添加自己的emacs包到popkit elpa,只需求在项目https://github.com/aborn/popkit-elpa
+            提交一个pull request即可，查看<a href="https://github.com/aborn/popkit-elpa">popkit elpa</a>
+            项目详情。
         </p>
         <a name="development"></a>
-        <h2>Development</h2>
+        <h2>欢迎共同开发</h2>
         <p><a href="https://github.com/aborn/popkit-elpa">https://github.com/aborn/popkit-elpa</a></p>
         <p>
-            Contributions are welcome. Currently, the builder supports
-            packages using git, subversion, mercurial, bzr, cvs, darcs, fossil and
+            该项目从melpa fork过来，大部分源码来源于melpa archives，并在其基础上做了些修改.
+            当前, 支持构建的包源为git, subversion, mercurial, bzr, cvs, darcs, fossil and
             emacswiki.
+        </p>
+        <a name="contact"></a>
+        <h2>联系</h2>
+        <p>
+            GITHUB: https://github.com/aborn <br/>
+            EMAIL : aborn.jiang AT foxmail.com
         </p>
     </section>
 </div>
