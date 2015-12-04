@@ -476,10 +476,10 @@
       ]);
     } else {
       return m(".alert.alert-success", [
-        m("strong", "Next build: "),
+        m("strong", "下一次构建："),
         m("span", [reltime(ctrl.next())]),
-        m("span", [", last ended ", reltime(ctrl.completed()),
-                   " and took ", duration()])
+        m("span", [", 上一次结束于 ", reltime(ctrl.completed()),
+                   " 耗时 ", duration()])
       ]);
     }
   };
