@@ -22,7 +22,7 @@ popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的�
 
 ## 支持该项目
 支持该项目，用支付宝扫一扫下面二维码进行支付捐赠:
-![](html/style/image/donate.png "支持该项目")
+![](html/style/image/donate.png =250x250 "支持该项目")
 
 ## 启动时间 
 2015-12-01
