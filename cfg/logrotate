@@ -1,6 +1,6 @@
 /home/popkit/log/melpa*.log {
 	daily
-	create 0640 melpa melpa
+	create 0640 popkit popkit
 	compress
 	dateext
 	missingok
@@ -14,6 +14,6 @@
 		fi; \
 	endscript
 	postrotate
-		[ ! -f /home/melpa/var/run/nginx.pid ] || kill -USR1 `cat /home/melpa/var/run/nginx.pid`
+		[ ! -f /home/popkit/var/run/nginx.pid ] || kill -USR1 `cat /home/popkit/var/run/nginx.pid`
 	endscript
 }
