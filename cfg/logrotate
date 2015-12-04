@@ -1,0 +1,19 @@
+/home/popkit/log/melpa*.log {
+	daily
+	create 0640 popkit popkit
+	compress
+	dateext
+	missingok
+	missingok
+	notifempty
+	rotate 36500
+	sharedscripts
+	prerotate
+		if [ -d /etc/logrotate.d/httpd-prerotate ]; then \
+			run-parts /etc/logrotate.d/httpd-prerotate; \
+		fi; \
+	endscript
+	postrotate
+		[ ! -f /home/popkit/var/run/nginx.pid ] || kill -USR1 `cat /home/popkit/var/run/nginx.pid`
+	endscript
+}
