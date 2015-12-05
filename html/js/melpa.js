@@ -97,6 +97,7 @@
     // Gather remote info about packages
     //////////////////////////////////////////////////////////////////////////////
 
+    
     melpa.packageList = m.sync([
         m.request({method: 'GET', url: "/recipes.json"}),
         m.request({method: 'GET', url: "/archive.json"}),
@@ -241,6 +242,16 @@
 
     melpa.packagelist = {};
     melpa.packagelist.controller = function() {
+        this.diskinfo = m.sync([
+            m.request({method: 'GET', url: "/disk_status.json"})
+        ]).then(function(info) {
+            var diskinfo = info[0];
+            return {
+                used : diskinfo.used,
+                avail: diskinfo.avail
+            };
+        });
+
         var resetPagination = function() { this.paginatorCtrl.pageNumber(1); }.bind(this);
         this.filterTerms = addPropSetHook(m.prop(m.route.param('q') || ''),
                                           resetPagination);
@@ -292,7 +303,9 @@
                 " 个包 ",
                 m("small", [
                     ctrl.packageList().totalDownloads().toLocaleString(),
-                    " 个下载量"
+                    " 个下载量",
+                    " 磁盘使用：" + ctrl.diskinfo().used,
+                    " 磁盘剩余容量：" + ctrl.diskinfo().avail
                 ])
             ]),
             m("p", [
