@@ -1,12 +1,14 @@
 #!/bin/bash -e
 
+exec 2>&1
+
 SCRIPTPATH=$( cd "$(dirname "$0")" ; pwd -P )
 export HOME=$( cd "${SCRIPTPATH}/../../.." ; pwd -P )
 
 MELPA_REPO="${SCRIPTPATH}/../.."
 cd "${MELPA_REPO}"
 
-DISK_DELAY=$((10 * 60))
+DISK_DELAY=$((2 * 60))
 echo `date +%Y-%m-%d-%H:%M.%S`
 
 ECUKES_EMACS=${EMACS:-$(which emacs)}

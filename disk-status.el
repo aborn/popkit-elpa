@@ -37,7 +37,7 @@
             (ab/shell-command-to-string (ab/get-disk-status-command "used")))
            (command-result-avail
             (ab/shell-command-to-string (ab/get-disk-status-command "avail"))))
-      (message (format "write result to %s" ab/disk-status-file-name))
+;;      (message (format "write result to %s" ab/disk-status-file-name))
       (insert
        (json-encode `(:used ,command-result-used :avail ,command-result-avail))))))
 
