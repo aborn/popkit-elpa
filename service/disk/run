@@ -1,0 +1,23 @@
+#!/bin/bash -e
+
+SCRIPTPATH=$( cd "$(dirname "$0")" ; pwd -P )
+export HOME=$( cd "${SCRIPTPATH}/../../.." ; pwd -P )
+
+MELPA_REPO="${SCRIPTPATH}/../.."
+cd "${MELPA_REPO}"
+
+echo `date +%Y-%m-%d-%H:%M.%S`
+
+ECUKES_EMACS=${EMACS:-$(which emacs)}
+
+echo "*** Emacs version ***"
+echo "ECUKES_EMACS = $ECUKES_EMACS"
+"$ECUKES_EMACS" --version
+echo
+
+cask exec ecukes
+
+"$ECUKES_EMACS" --batch --eval "(progn (load-file \"disk-status.el\")(ab/disk-status))"
+
+echo "Build successful"
+
