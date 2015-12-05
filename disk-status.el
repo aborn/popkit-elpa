@@ -13,7 +13,7 @@
 
 (defun ab/get-disk-status-command (arg)
   (cond
-   ((string= system-type "gun/linux")
+   ((string= system-type "gnu/linux")
     (cond
      ((string= arg "used")
       "df -h |grep \"/dev/\" |awk '{print $5}'")
@@ -44,9 +44,10 @@
 (defun ab/debug-disk-status ()
   (interactive)
   (with-temp-file "~/debug.txt"
-    (when (string= system-type "gun/linux")
+    (when (string= system-type "gnu/linux")
       (insert "gun/linux"))
     (when (string= system-type "darwin")
-      (insert "mac osx"))))
+      (insert "mac osx")))
+  (message system-type))
 
 (provide 'disk-status)
