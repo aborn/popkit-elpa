@@ -6,6 +6,7 @@ export HOME=$( cd "${SCRIPTPATH}/../../.." ; pwd -P )
 MELPA_REPO="${SCRIPTPATH}/../.."
 cd "${MELPA_REPO}"
 
+DISK_DELAY=$((10 * 60))
 echo `date +%Y-%m-%d-%H:%M.%S`
 
 ECUKES_EMACS=${EMACS:-$(which emacs)}
@@ -19,5 +20,7 @@ cask exec ecukes
 
 "$ECUKES_EMACS" --batch --eval "(progn (load-file \"disk-status.el\")(ab/disk-status))"
 
-echo "Build successful"
+echo "Disk info successful"
+
+sleep $DISK_DELAY
 
