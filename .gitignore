@@ -30,3 +30,5 @@ service/syncer-stable/supervise/
 service/syncer/log/main/
 service/syncer/log/supervise/
 service/syncer/supervise/
+service/disk/log/
+service/disk/supervise/
