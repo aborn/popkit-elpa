@@ -1,7 +1,6 @@
 ;;
 ;; 监控disk使用量的包
 ;;
-
 (require 'json)
 
 (defconst ab/disk-status-this-dir (file-name-directory (or load-file-name (buffer-file-name))))

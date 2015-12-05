@@ -16,7 +16,7 @@ echo "ECUKES_EMACS = $ECUKES_EMACS"
 "$ECUKES_EMACS" --version
 echo
 
-cask exec ecukes
+# cask exec ecukes
 
 "$ECUKES_EMACS" --batch --eval "(progn (load-file \"disk-status.el\")(ab/disk-status))"
 
