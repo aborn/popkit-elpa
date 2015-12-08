@@ -1,3 +1,4 @@
+#!/bin/bash -e
 
 git remote add upstream https://github.com/milkypostman/melpa
 
