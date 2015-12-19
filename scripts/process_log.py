@@ -13,7 +13,7 @@ import tempfile
 import sqlite3
 from operator import or_
 
-LOGFILE = "/home/popkit/log/melpa.access.log"
+LOGFILE = "/home/popkit/log/melpa.access.log-20151206"
 LOGREGEX = r'(?P<ip>[\d.]+) [ -]+ \[(?P<date>[\w/: +-]+)\] ' \
            r'"GET /packages/(?P<package>[^ ]+)-[0-9.]+.(?:el|tar) ' \
            r'HTTP/\d.\d" 200'

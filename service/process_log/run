@@ -6,6 +6,6 @@ cd "${MELPA_REPO}"
 
 /usr/bin/python ${MELPA_REPO}/scripts/process_log.py
 
-/usr/sbin/logrotate -s ${MELPA_REPO}/../var/lib/logrotate/status ${MELPA_REPO}/cfg/logrotate
+#/usr/sbin/logrotate -s ${MELPA_REPO}/../../../var/lib/logrotate/status ${MELPA_REPO}/cfg/logrotate
 
-sleep 6h
+sleep 1h
