@@ -567,7 +567,7 @@
                     m("section.jumbotron.ui.segment", [
                         "popkit elpa是elpa的国内镜像，满足国内emacs用户快速安装包的需求:",
                         m("ul", [
-                            "该项目运行在作者本人国内的VPS上；",
+                            "该项目运行在作者本人国内的VPS(服务器地址：深圳)上；",
                             "每天会循环更新<a href='https://github.com/aborn/popkit-elpa/tree/master/recipes'>recipes</a>列表里的包(从recipe指定的源进行下载)；",
                             "每次更新完成后，休息2小时后会进行下一次build；",
                             "popkit elpa里的recipes，每2小时保持与melpa里的recipes同步；",
