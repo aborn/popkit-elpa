@@ -1,11 +1,8 @@
-#!/bin/bash -e
-
-git remote add upstream https://github.com/milkypostman/melpa
-
-git fetch upstream
-
-git checkout master
-
-git rebase upstream/master
-
-cp recipes/* ../popkit-elpa/recipes
+#!/usr/bin/env bash
+cd "$(dirname "$0")"
+cd /home/popkit/melpa
+git pull
+cp recipes/* /home/popkit/popkit-elpa/recipes
+cd /home/popkit/popkit-elpa
+git commit -am "update"
+git push
