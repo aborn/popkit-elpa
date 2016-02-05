@@ -32,3 +32,4 @@ service/syncer/log/supervise/
 service/syncer/supervise/
 service/disk/log/
 service/disk/supervise/
+html/updates.rss.tmp
