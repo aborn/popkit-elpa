@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo "------------------------------------------"
 cd "$(dirname "$0")"
 echo `date +%Y-%m-%d-%H:%M.%S`
 cd /home/popkit/melpa
