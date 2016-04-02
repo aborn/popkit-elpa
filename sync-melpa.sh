@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 echo "------------------------------------------"
 cd "$(dirname "$0")"
+git pull
 echo `date +%Y-%m-%d-%H:%M.%S`
 cd /home/popkit/melpa
 git pull
