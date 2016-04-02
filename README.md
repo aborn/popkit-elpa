@@ -17,6 +17,18 @@ popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的�
             '("popkit" . "http://elpa.popkit.org/packages/"))
 ```
 
+## spacemacs用户注意
+如果你想用popkit的源代替原来的melpa源，将下列代码加入到~/.emacs.d/init.el的最后
+```elisp
+(require 'package)
+;; 初始化插件源列表,默认加入gnu及org的源
+;; 注意：有时候gnu在国内也链接不上,可将gnu的源移除
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("org" . "http://orgmode.org/elpa/")))
+(add-to-list 'package-archives
+             '("popkit" . "http://elpa.popkit.org/packages/"))
+(package-initialize)   ;; 初始化
+```
 ## 项目状态
 线上运行中
 
