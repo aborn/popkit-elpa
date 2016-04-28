@@ -31,7 +31,7 @@ popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的�
 ```
 
 或者按照[DelightRun的建议](https://github.com/aborn/popkit-elpa/issues/8)
-找到~/.emacs.d/core/core-configuration-layer.el文件里的代码段  
+找到~/.emacs.d/core/core-configuration-layer.el文件里的代码段
 ```elisp
 (defvar configuration-layer--elpa-archives
   '(("melpa" . "melpa.org/packages/")
@@ -56,6 +56,9 @@ popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的�
 ## 支持该项目
 支持该项目，用支付宝扫一扫下面二维码进行支付捐赠:  
 <img src="html/donate.png" alt="支持该项目" style="width:250px;height:250px"/>
+
+多谢以下成员对popkit-elpa项目的支持:  
+1. 2016-04-21 14:31 收到**@咧威**网友捐赠，￥10
 
 ## 启动时间 
 2015-12-01
