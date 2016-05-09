@@ -18,24 +18,13 @@ popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的�
 ```
 
 ## spacemacs用户注意
-按照[DelightRun的建议](https://github.com/aborn/popkit-elpa/issues/8)
-找到~/.emacs.d/core/core-configuration-layer.el文件里的代码段
-```elisp
-(defvar configuration-layer--elpa-archives
-  '(("melpa" . "melpa.org/packages/")
-    ("org"   . "orgmode.org/elpa/")
-    ("gnu"   . "elpa.gnu.org/packages/"))
-  "List of ELPA archives required by Spacemacs.")
-
-```
-将melpa源替换为popkit源：  
+在 `dotspacemacs/user-init ()` 中加入
 
 ```elisp
-(defvar configuration-layer--elpa-archives
+(setq configuration-layer--elpa-archives
   '(("popkit" . "http://elpa.popkit.org/packages/")
     ("org"   . "orgmode.org/elpa/")
-    ("gnu"   . "elpa.gnu.org/packages/"))
-  "List of ELPA archives required by Spacemacs.")
+    ("gnu"   . "elpa.gnu.org/packages/")))
 
 ```
 ## 项目状态
