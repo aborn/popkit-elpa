@@ -289,6 +289,10 @@
         this.paginatorCtrl = new melpa.paginator.controller(this.sortedPackages);
     };
 
+    function countnumber() {
+
+    }
+
     melpa.packagelist.view = function(ctrl) {
         var sortToggler = function(field) {
             return function() { return ctrl.toggleSort(field); };
@@ -299,7 +303,8 @@
         return m("section#packages", [
             m("h2[style='margin-top: 25px']", [
                 "当前库中含有",
-                ctrl.packageList().totalPackages().toLocaleString(),
+                "unknown",
+                //ctrl.packageList().totalPackages().toLocaleString(),
                 " 个包 ",
                 m("small", [
                     ctrl.packageList().totalDownloads().toLocaleString(),
