@@ -13,6 +13,7 @@ download_log.db
 html/.last-build-duration
 html/download_log
 html/updates.rss
+html/packages/
 recipes/.dirstamp
 service/builder-stable/log/main/
 service/builder-stable/log/supervise/
