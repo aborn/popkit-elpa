@@ -303,8 +303,7 @@
         return m("section#packages", [
             m("h2[style='margin-top: 25px']", [
                 "当前库中含有",
-                "unknown",
-                //ctrl.packageList().totalPackages().toLocaleString(),
+                ctrl.packageList().totalPackages().toLocaleString(),
                 " 个包 ",
                 m("small", [
                     ctrl.packageList().totalDownloads().toLocaleString(),
