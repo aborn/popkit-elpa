@@ -134,7 +134,9 @@
         };
 
         var listed = _.intersection(_.keys(archive), _.keys(recipes));
-        return new melpa.PackageList(_(listed).reduce(function(pkgs, name) {
+        var errorNumber = 0;
+        var errorPkgs = "";
+        var reducedPkg = _(listed).reduce(function(pkgs, name) {
             var built = archive[name];
             var recipe = recipes[name];
             var version = built.ver.join(".");
@@ -143,22 +145,34 @@
             });
             var oldNames = recipe['old-names'] || [];
 
-            pkgs.push(new melpa.Package({
-                name: name,
-                version: version,
-                dependencies: deps,
-                description: built.desc.replace(/\s*\[((?:source: )?\w+)\]$/, ""),
-                source: recipe.fetcher,
-                downloads: oldNames.concat(name).reduce(function(sum, n) { return sum + (downloads[n] || 0); }, 0),
-                fetcher: recipe.fetcher,
-                recipeURL: "https://github.com/milkypostman/melpa/blob/master/recipes/" + name,
-                packageURL: "packages/" + name + "-" + version + "." + (built.type == "single" ? "el" : "tar"),
-                sourceURL: calculateSourceURL(name, recipe),
-                oldNames: oldNames,
-                searchExtra: [recipe.repo]
-            }));
+            try {
+                pkgs.push(new melpa.Package({
+                    name: name,
+                    version: version,
+                    dependencies: deps,
+                    description: built.desc.replace(/\s*\[((?:source: )?\w+)\]$/, ""),
+                    source: recipe.fetcher,
+                    downloads: oldNames.concat(name).reduce(function (sum, n) {
+                        return sum + (downloads[n] || 0);
+                    }, 0),
+                    fetcher: recipe.fetcher,
+                    recipeURL: "https://github.com/milkypostman/melpa/blob/master/recipes/" + name,
+                    packageURL: "packages/" + name + "-" + version + "." + (built.type == "single" ? "el" : "tar"),
+                    sourceURL: calculateSourceURL(name, recipe),
+                    oldNames: oldNames,
+                    searchExtra: [recipe.repo]
+                }));
+            } catch (error) {
+                console.log(error);
+                errorNumber ++;
+                errorPkgs = errorPkgs + ',' + name;
+            }
             return pkgs;
-        }, []));
+        }, []);
+
+        console.log("error number=" + errorNumber);
+        console.log("error pkgs=" + errorPkgs);
+        return new melpa.PackageList(reducedPkg);
     });
 
     //////////////////////////////////////////////////////////////////////////////
@@ -289,8 +303,13 @@
         this.paginatorCtrl = new melpa.paginator.controller(this.sortedPackages);
     };
 
-    function countnumber() {
-
+    function countnumber(ctrl) {
+        console.log(ctrl);
+        if (ctrl.packageList()) {
+            return ctrl.packageList().totalPackages().toLocaleString();
+        } else {
+            return "unknown";
+        }
     }
 
     melpa.packagelist.view = function(ctrl) {
@@ -303,7 +322,7 @@
         return m("section#packages", [
             m("h2[style='margin-top: 25px']", [
                 "当前库中含有",
-                ctrl.packageList().totalPackages().toLocaleString(),
+                countnumber(ctrl),
                 " 个包 ",
                 m("small", [
                     ctrl.packageList().totalDownloads().toLocaleString(),
