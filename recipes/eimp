@@ -1,1 +1,1 @@
-(eimp :fetcher github :repo "nicferrier/eimp")
+(eimp :fetcher wiki)

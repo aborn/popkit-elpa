@@ -1,2 +1,2 @@
-(plantuml-mode :repo "zwz/plantuml-mode"
+(plantuml-mode :repo "wildsoul/plantuml-mode"
                :fetcher github)

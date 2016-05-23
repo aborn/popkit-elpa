@@ -1,3 +1,4 @@
 (paredit-menu
  :fetcher github
- :repo "phillord/paredit-menu")
+ :repo "phillord/phil-emacs-packages"
+ :files ("paredit-menu.el"))

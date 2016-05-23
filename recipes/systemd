@@ -1,3 +1,1 @@
-(systemd :fetcher github
-         :repo "holomorph/systemd-mode"
-         :files (:defaults "*.txt"))
+(systemd :fetcher github :repo "holomorph/systemd-mode")

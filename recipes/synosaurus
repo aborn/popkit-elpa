@@ -1,1 +1,1 @@
-(synosaurus :repo "hpdeifel/synosaurus" :fetcher github)
+(synosaurus :repo "rootzlevel/synosaurus" :fetcher github)
