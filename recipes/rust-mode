@@ -1,2 +1,3 @@
 (rust-mode :repo "rust-lang/rust-mode"
-           :fetcher github)
+           :fetcher github
+           :files ("rust-mode.el"))

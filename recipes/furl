@@ -1,1 +1,1 @@
-(furl :fetcher github :repo "nex3/furl-el")
+(furl :fetcher hg :url "https://code.google.com/p/furl-el/")

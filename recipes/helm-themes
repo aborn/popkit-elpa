@@ -1,3 +1,4 @@
 (helm-themes
  :repo "syohex/emacs-helm-themes"
- :fetcher github)
+ :fetcher github
+ :files ("helm-themes.el"))

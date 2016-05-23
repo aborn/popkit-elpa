@@ -1,3 +1,4 @@
 (git-gutter-fringe
  :repo "syohex/emacs-git-gutter-fringe"
- :fetcher github)
+ :fetcher github
+ :files ("git-gutter-fringe.el"))

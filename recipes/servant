@@ -1,4 +1,4 @@
 (servant
  :fetcher github
- :repo "cask/servant"
+ :repo "rejeep/servant.el"
  :files ("*.el" "bin"))

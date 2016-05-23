@@ -1,3 +1,4 @@
 (quickrun
  :repo "syohex/emacs-quickrun"
- :fetcher github)
+ :fetcher github
+ :files ("quickrun.el"))
