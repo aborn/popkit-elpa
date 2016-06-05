@@ -29,6 +29,12 @@ popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的�
 ## 项目状态
 线上运行中
 
+## 联系 & 反馈
+如何反馈问题？  
+1. 最快速方式：加入以下QQ群：537772301（popkit-elpa源，验证答案：elisp)  
+2. [提issue](https://github.com/aborn/popkit-elpa/issues/new)  
+3. 发邮件到: elpa@popkit.org
+
 ## 支持该项目
 支持该项目，用支付宝扫一扫下面二维码进行支付捐赠:  
 <img src="html/donate.png" alt="支持该项目" style="width:250px;height:250px"/>
