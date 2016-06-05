@@ -30,7 +30,7 @@ popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的�
 线上运行中
 
 ## 联系 & 反馈
-如何反馈问题？  
+可以通过以下三种方式进行问题反馈？  
 1. 最快速方式：加入以下QQ群：537772301（popkit-elpa源，验证答案：elisp)  
 2. [提issue](https://github.com/aborn/popkit-elpa/issues/new)  
 3. 发邮件到: elpa@popkit.org
