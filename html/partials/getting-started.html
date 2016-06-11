@@ -13,17 +13,17 @@
         </p>
 
         <p>
-            配置emacs的安装源从popkit下载，添加http://elpa.popkit.org/packages/到
+            配置emacs的安装源从popkit下载，添加https://elpa.popkit.org/packages/到
             <code>package-archives</code>，位置位于<code>(require
             'package)</code>之后，且
             <code>package-initialize</code>之前，将如下代码添加到你的
-            <code>init.el</code> 或 <code>.emacs</code> 文件即可:
+            <code>init.el</code> 或 <code>.emacs</code> 文件即可(popkit elpa已经支持https访问):
         </p>
 
         <pre><code>
           (require 'package) ;; You might already have this line
           (add-to-list 'package-archives
-          '("popkit" . "http://elpa.popkit.org/packages/"))
+          '("popkit" . "https://elpa.popkit.org/packages/"))
           (when (< emacs-major-version 24)
           ;; For important compatibility libraries like cl-lib
           (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
