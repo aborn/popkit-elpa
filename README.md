@@ -12,9 +12,10 @@ popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的�
 6. 如有任何问题，请联系aborn(https://github.com/aborn)
 
 ## 安装
+popkit elpa已经支持https的访问方式:  
 ```elisp
 (add-to-list 'package-archives
-            '("popkit" . "http://elpa.popkit.org/packages/"))
+            '("popkit" . "https://elpa.popkit.org/packages/"))
 ```
 
 ## spacemacs用户注意
@@ -26,6 +27,8 @@ popkit elpa是melpa的国内镜像，满足国内emacs用户快速安装包的�
     ("gnu"   . "elpa.gnu.org/packages/")))
 
 ```
+请参考我的[init.el](https://github.com/aborn/.spacemacs.d/blob/master/init.el)
+
 ## 项目状态
 线上运行中
 
