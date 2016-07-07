@@ -32,6 +32,11 @@ popkit elpa已经支持https的访问方式:
 ## 项目状态
 线上运行中
 
+## 构建状态
+[![popkit elpa build status](https://elpa.popkit.org/build-status.svg)](https://elpa.popkit.org/)
+[![popkit elpa last update](https://elpa.popkit.org/last_update.svg)](https://elpa.popkit.org/)
+[![popkit elpa Downloads](http://elpa.popkit.org/download_counts.svg)](https://elpa.popkit.org/)
+
 ## 联系 & 反馈
 可以通过以下三种方式进行问题反馈？  
 1. 最快速方式：加入以下QQ群：537772301（popkit-elpa源，验证答案：elisp)  
