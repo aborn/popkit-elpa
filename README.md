@@ -27,6 +27,16 @@ popkit elpa已经支持https的访问方式:
     ("gnu"   . "elpa.gnu.org/packages/")))
 
 ```
+popkit源已经加入了gnu和org源里的所有包，可以只设置popkit源就行，如下：
+
+```elisp
+ (setq configuration-layer--elpa-archives
+        '(
+          ("popkit" . "elpa.popkit.org/packages/")
+          ))
+  )
+```
+
 请参考我的[init.el](https://github.com/aborn/.spacemacs.d/blob/master/init.el)
 
 ## 项目状态
@@ -50,7 +60,8 @@ popkit elpa已经支持https的访问方式:
 5. 2016-05-11 09:33 收到网名为：**青墨**网友的捐赠，￥4  
 6. 2016-05-15 14:52 收到网名为：**奇**网友的捐赠，￥20  
 7. 2016-05-28 15:38 收到网名为：**雅雯**网友的捐赠，￥50  
-8. 2016-05-29 16:42 收到网名为：**DelightRun**网友的捐赠，￥50
+8. 2016-05-29 16:42 收到网名为：**DelightRun**网友的捐赠，￥50  
+9. 2016-07-13 12:00 收到网名为：**延顺**网友的捐赠，￥10
 
 ## 启动时间 
 2015-12-01
